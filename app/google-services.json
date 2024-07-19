@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "79498125231",
+    "project_id": "app-teste-firebase-f2b68",
+    "storage_bucket": "app-teste-firebase-f2b68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79498125231:android:283069caaa8ab2c98cd95a",
+        "android_client_info": {
+          "package_name": "com.gabriel.apptestefirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC70jwOIgGcFmf4PHxVeHjnKZU-dOJZn8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

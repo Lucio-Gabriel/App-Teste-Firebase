@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.formcadastro.FormCadastro"
+    android:background="@color/primaria"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logospotify"
+        android:layout_gravity="center"
+        android:layout_marginTop="171dp"
+        />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_email"
+        android:textColorHint="@color/white"
+        android:background="@color/cor_input"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_senha"
+        android:textColorHint="@color/white"
+        android:background="@color/cor_input"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:inputType="numberPassword"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="13dp"
+        />
+    
+    <Button
+        android:id="@+id/bt_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_botao_cadastrar"
+        android:textSize="18sp"
+        android:textColor="@color/primaria"
+        android:backgroundTint="@color/cor_btn"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:layout_margin="20dp"
+        />
+
+
+</LinearLayout>

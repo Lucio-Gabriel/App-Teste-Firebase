@@ -9,7 +9,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.gabriel.apptestefirebase.R
 import com.gabriel.apptestefirebase.databinding.ActivityFormCadastroBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class FormCadastro : AppCompatActivity() {
 
@@ -50,7 +54,22 @@ class FormCadastro : AppCompatActivity() {
                             binding.editSenha.setText("")
                         }
                         // Aqui vamos tratar as mensagens de erro
-                    }.addOnFailureListener {
+                    }.addOnFailureListener {exception ->
+
+                        // mensagens de erros (excessoes)
+                        val mensagemErro = when(exception){
+                            is FirebaseAuthWeakPasswordException -> "Digite uma senha com no mínimo 6 caracteres!"
+                            is FirebaseAuthInvalidCredentialsException -> "Digite um Email válido!"
+                            is FirebaseAuthUserCollisionException -> "Esta conta já foi cadastrada!"
+                            is FirebaseNetworkException -> "Sem conexão com a internet!"
+                            else -> "Erro ao cadastrar usuário!"
+                        }
+
+                        val snackbar = Snackbar.make(view,mensagemErro, Snackbar.LENGTH_SHORT)
+                        snackbar.setBackgroundTint(Color.RED)
+                        snackbar.show()
+                        binding.editEmail.setText("")
+                        binding.editSenha.setText("")
 
                     }
               }
